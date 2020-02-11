@@ -176,7 +176,6 @@ namespace DataStructuresCSharp.Trees
 
             if (distance == 0) {
                 list.Add(node.Value);
-                //Console.WriteLine(node.Value);
                 return;
             }
             GetNodesAtDistance(node.Left, distance - 1, list);
