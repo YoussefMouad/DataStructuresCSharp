@@ -14,10 +14,7 @@ namespace DataStructuresCSharp.AVLTree
             tree.Insert(20);
             tree.Insert(30);
 
-
-
-            _ = Console.ReadKey();
-
+            Console.ReadKey();
         }
     }
 }
