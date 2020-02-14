@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>DataStructuresCSharp.LinkedList.Test</StartupObject>
+    <StartupObject>DataStructuresCSharp.Stacks.Test</StartupObject>
   </PropertyGroup>
 
 </Project>
