@@ -5,7 +5,7 @@ namespace DataStructuresCSharp.Stacks
 {
     class Stack
     {
-        private int[] items;
+        readonly private int[] items;
         private int count;
 
         public Stack(int size)

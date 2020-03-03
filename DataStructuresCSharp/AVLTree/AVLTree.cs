@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructuresCSharp.AVLTree
 {
     /// <summary>
     /// Balanced version of Trees
     /// </summary>
-    class AVLTree
+    class AvlTree
     {
-        private AVLNode Root { get; set; }
+        private AvlNode Root { get; set; }
 
         public void Insert(int value)
         {
             Root = Insert(Root, value);
         }
 
-        private AVLNode Insert(AVLNode root, int value)
+        private AvlNode Insert(AvlNode root, int value)
         {
             if (root == null) {
-                return new AVLNode(value);
+                return new AvlNode(value);
             }
 
             if (value < Root.Value)
@@ -32,7 +30,7 @@ namespace DataStructuresCSharp.AVLTree
             return Balance(root);
         }
 
-        private AVLNode Balance(AVLNode root)
+        private AvlNode Balance(AvlNode root)
         {
             if (IsLeftHeavy(root)) {
                 if (BalanceFactor(root.Left) < 0)
@@ -47,7 +45,7 @@ namespace DataStructuresCSharp.AVLTree
             return root;
         }
 
-        private AVLNode LeftRotate(AVLNode root)
+        private AvlNode LeftRotate(AvlNode root)
         {
             var newRoot = root.Right;
             root.Right = newRoot.Left;
@@ -59,7 +57,7 @@ namespace DataStructuresCSharp.AVLTree
             return newRoot;
         }
 
-        private AVLNode RightRotate(AVLNode root)
+        private AvlNode RightRotate(AvlNode root)
         {
             var newRoot = root.Left;
             root.Left = newRoot.Right;
@@ -71,22 +69,22 @@ namespace DataStructuresCSharp.AVLTree
             return root;
         }
 
-        private void SetHeight(AVLNode node)
+        private void SetHeight(AvlNode node)
         {
             node.Height = Math.Max(Height(node.Left), Height(node.Right)) + 1;
         }
 
-        private int BalanceFactor(AVLNode root)
+        private int BalanceFactor(AvlNode root)
         {
             return Height(root.Left) - Height(root.Right);
         }
 
-        private bool IsLeftHeavy(AVLNode root)
+        private bool IsLeftHeavy(AvlNode root)
         {
             return BalanceFactor(root) > 1;
         }
 
-        private bool IsRightHeavy(AVLNode root)
+        private bool IsRightHeavy(AvlNode root)
         {
             return BalanceFactor(root) < -1;
         }
@@ -96,19 +94,19 @@ namespace DataStructuresCSharp.AVLTree
             return Height(Root);
         }
 
-        private int Height(AVLNode root)
+        private int Height(AvlNode root)
         {
             return (root == null) ? -1 : root.Height;
         }
 
-        private class AVLNode
+        private class AvlNode
         {
             public int Value { get; set; }
-            public AVLNode Left { get; set; }
-            public AVLNode Right { get; set; }
+            public AvlNode Left { get; set; }
+            public AvlNode Right { get; set; }
             public int Height { get; set; }
 
-            public AVLNode(int value)
+            public AvlNode(int value)
             {
                 Value = value;
                 Height = 0;

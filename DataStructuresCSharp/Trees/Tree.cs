@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace DataStructuresCSharp.Trees
 {
-    class Tree
+    class Tree : IEquatable<Tree>
     {
         private Node Root { get; set; }
 
@@ -129,11 +129,6 @@ namespace DataStructuresCSharp.Trees
             return node.Left is null && node.Right is null;
         }
 
-        public bool Equals(Tree other)
-        {
-            return Equals(Root, other.Root);
-        }
-
         private bool Equals(Node first, Node second)
         {
             if (first is null && second is null)
@@ -146,6 +141,11 @@ namespace DataStructuresCSharp.Trees
                     && Equals(first.Right, second.Right);
 
             return false;
+        }
+
+        public bool Equals([AllowNull] Tree other)
+        {
+            return Equals(Root, other.Root);
         }
 
         public bool IsBinarySearchTree()

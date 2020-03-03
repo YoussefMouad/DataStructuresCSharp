@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructuresCSharp.LinkedList
 {
-    class Test
+    static class Test
     {
         public static void Main(string[] args)
         {

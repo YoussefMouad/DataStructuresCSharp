@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataStructuresCSharp.AVLTree
 {
-    class Test
+    static class Test
     {
         public static void Main(string[] args)
         {
-            AVLTree tree = new AVLTree();
+            AvlTree tree = new AvlTree();
 
             tree.Insert(10);
             tree.Insert(20);
