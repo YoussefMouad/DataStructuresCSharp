@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 
 namespace DataStructuresCSharp.Trees
 {
@@ -143,7 +142,7 @@ namespace DataStructuresCSharp.Trees
             return false;
         }
 
-        public bool Equals([AllowNull] Tree other)
+        public bool Equals(Tree other)
         {
             return Equals(Root, other.Root);
         }
