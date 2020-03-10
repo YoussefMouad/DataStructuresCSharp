@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>DataStructuresCSharp.Graphs.Test</StartupObject>
+    <StartupObject>DataStructuresCSharp.Queue.Test</StartupObject>
   </PropertyGroup>
 
 </Project>
